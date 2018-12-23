@@ -3,7 +3,7 @@ var filesToCache = [
   '/',
   '/index.html',
   '/scripts/app.js',
-  '/scripts/localforage-1.4.0.js',
+  '/scripts/localforage-1.7.3.js',
   '/styles/ud811.css',
   '/images/clear.png',
   '/images/cloudy-scattered-showers.png',
