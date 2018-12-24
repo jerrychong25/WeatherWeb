@@ -11,7 +11,7 @@ This is a website developed for project name called "Weather", which developed d
 
 ## Deployment
 
-Hosted presently on local host.
+Hosted presently hosted on [https://weatherapp-e4a0d.firebaseapp.com/](https://weatherapp-e4a0d.firebaseapp.com/).
 
 ## Built With
 
