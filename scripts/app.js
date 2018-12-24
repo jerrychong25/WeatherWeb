@@ -104,6 +104,16 @@ var injectedForecast = {
       app.container.appendChild(card);
       app.visibleCards[data.key] = card;
     }
+
+    // Verify data is newer than what we already have, if not, bail.
+    var dataElem = card.querySelector('.date');
+    if(dataElem.getAttribute('data-dt') >= data.currently.time) {
+      return;
+    }
+
+    dataElem.setAttribute('data-dt', data.currently.time);
+    dataElem.textContent = new Date(data.currently.time * 1000);
+
     card.querySelector('.description').textContent = data.currently.summary;
     card.querySelector('.date').textContent =
       new Date(data.currently.time * 1000);

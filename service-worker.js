@@ -1,5 +1,5 @@
-var dataCacheName = 'weatherData-final'
 var cacheName = 'weatherPWA-v1';
+var dataCacheName = 'weatherData-v2';
 var filesToCache = [
   '/',
   '/index.html',
@@ -20,6 +20,7 @@ var filesToCache = [
   '/images/thunderstorm.png',
   '/images/wind.png'
 ];
+var weatherAPIUrlBase = 'https://publicdata-weather.firebaseio.com/';
 
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');
@@ -36,7 +37,7 @@ self.addEventListener('activate', function(e) {
   e.waitUntil(
     caches.keys().then(function(keyList) {
       return Promise.all(keyList.map(function(key) {
-        if (key !== cacheName) {
+        if (key !== cacheName && key !== dataCacheName) {
           console.log('[ServiceWorker] Removing old cache', key);
           return caches.delete(key);
         }
@@ -48,7 +49,7 @@ self.addEventListener('activate', function(e) {
 self.addEventListener('fetch', function(e) {
   console.log('[ServiceWorker] Fetch', e.request.url);
 
-  if(e.request.url.startsWith(dataUrl)) {
+  if(e.request.url.startsWith(weatherAPIUrlBase)) {
     e.respondWith(
       fetch(e.request)
       .then(function(response) {
