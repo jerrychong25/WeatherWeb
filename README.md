@@ -1,5 +1,10 @@
 # Weather Web
 
+<p align="center">
+  <img src="ScreenShot.png" alt="Weather Web Screenshot"
+       width="800" height="500">
+</p>
+
 ## Getting Started
 
 This is a website developed for project name called "Weather", which developed during [Udacity's Intro to Progressive Web Apps Course](https://www.udacity.com/course/intro-to-progressive-web-apps--ud811).
